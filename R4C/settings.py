@@ -42,6 +42,17 @@ INSTALLED_APPS = [
     'robots'
 ]
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+EMAIL_HOST = 'smtp.mail.ru'  # SMTP сервер (например, smtp.gmail.com для Gmail)
+EMAIL_PORT = 587                 # Порт SMTP сервера (587 для TLS, 465 для SSL)
+EMAIL_USE_TLS = True             # Использовать TLS (True или False)
+EMAIL_HOST_USER = 'tsydypov.ilya@mail.ru'  # Ваш адрес электронной почты
+EMAIL_HOST_PASSWORD = 'shv9sqy3FrCSGR19NrEr'
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -80,6 +91,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        
     }
 }
 
