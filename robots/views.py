@@ -27,7 +27,8 @@ class CreateRobotView(View):
             robot = Robot(serial = serial,
                         model = model,
                           version = version,
-                          created = created)
+                          created = created,
+                          is_available = True)
             robot.save()
 
 
