@@ -6,7 +6,7 @@ from robots.models import Robot
 
 @receiver(post_save, sender=Robot)
 def notify_available_robot(sender, instance, created, **kwargs):
-    if created and instance.is_available:
+    if instance.is_available:
         subject = f"Робот модели {instance.model}, версии {instance.version} теперь в наличии"
         message = f"Добрый день!\nНедавно вы интересовались нашим роботом модели {instance.model}, версии {instance.version}.\nЭтот робот теперь в наличии. Если вам подходит этот вариант - пожалуйста, свяжитесь с нами."
         from_email = 'tsydypov.ilya@mail.ru'

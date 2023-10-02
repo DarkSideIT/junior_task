@@ -22,7 +22,7 @@ def download_excel(request):
         ws.append(["Model", "Version", "The Amount Per Week"])
 
 
-        robot_versions = Robot.objects.filter(model=model, created__gte=start_date, created__lte=end_date).values('version').distinct()
+        robot_versions = Robot.objects.filter(model=model, created__gte=start_date, created__lte=end_date, is_available=True).values('version').distinct()
 
 
         for robot_version in robot_versions:
